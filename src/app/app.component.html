@@ -1,0 +1,26 @@
+<fieldset>
+  <legend>Without Animation</legend>
+  <hr/>
+  <h2>Plain *ngFor</h2>
+  <button (click)="show2 = !show2">toggle</button>
+  <ul class="items">
+    <li *ngFor="let item of show2 ? items : []" class="item"> {{item}}</li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>With Animation</legend>
+  <hr/>
+  <h2>*ngFor/[@listAnimation]</h2>
+  <button (click)="removeItem()">Delete second</button>
+  <ul class="items" infiniteScroll [infiniteScrollThrottle]="50" [infiniteScrollDistance]="2" [scrollWindow]="false">
+    <li @itemRemove *ngFor="let item of items" class="item">
+      <a href="">some dummy link for {{ item }}</a>
+      <div class="action-wrapper">
+        <button>button 1</button>
+        <button>button 2</button>
+        <button>button 3</button>
+      </div>
+    </li>
+  </ul>
+</fieldset>
