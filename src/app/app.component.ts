@@ -24,6 +24,7 @@ import {delay} from 'rxjs/operators';
 })
 export class AppComponent {
   tabs=['first', 'second'];
+  isRemoving = false;
 
   items = [
     'list',
@@ -44,6 +45,7 @@ export class AppComponent {
     'rxjs',
   ];
   removeItem() {
+    is
     of({}).pipe(delay(1500)).subscribe(() => {
       this.items = this.items.filter((item, index) => index !== 2);
     })    
