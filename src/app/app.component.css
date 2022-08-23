@@ -5,3 +5,8 @@ fieldset {
 h2 {
   font-size: 16px;
 }
+
+.items {
+  max-height: 250px;
+  overflow-y: scroll;
+}

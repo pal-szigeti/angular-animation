@@ -6,6 +6,8 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component } from '@angular/core';
+import { of } from 'rxjs';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'my-app',
@@ -21,10 +23,7 @@ import { Component } from '@angular/core';
   ],
 })
 export class AppComponent {
-  show1 = true;
-  show2 = true;
-  show3 = true;
-  show4 = true;
+  tabs=['first', 'second'];
 
   items = [
     'list',
@@ -35,8 +34,18 @@ export class AppComponent {
     'react',
     'vue',
     'rxjs',
+    'list',
+    'animation',
+    'list',
+    'animation',
+    'angular',
+    'react',
+    'vue',
+    'rxjs',
   ];
   removeItem() {
-    this.items = this.items.filter((item, index) => index !== 2);
+    of({}).pipe(delay(1500)).subscribe(() => {
+      this.items = this.items.filter((item, index) => index !== 2);
+    })    
   }
 }
